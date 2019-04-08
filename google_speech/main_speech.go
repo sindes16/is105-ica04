@@ -23,7 +23,7 @@ func main() {
         }
 
         // Sets the name of the audio file to transcribe.
-        filename := "audio/Audio.mp3"
+        filename := "audio/testMono.wav"
 
         // Reads the audio file into memory.
         data, err := ioutil.ReadFile(filename)
@@ -35,7 +35,7 @@ func main() {
         resp, err := client.Recognize(ctx, &speechpb.RecognizeRequest{
                 Config: &speechpb.RecognitionConfig{
                         Encoding:        speechpb.RecognitionConfig_LINEAR16,
-                        SampleRateHertz: 16000,
+                        
                         LanguageCode:    "en-US",
                 },
                 Audio: &speechpb.RecognitionAudio{
